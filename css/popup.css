@@ -1,0 +1,336 @@
+/* ----------------------------------------------------------
+	component # popup 
+---------------------------------------------------------- */
+/* 팝업 */
+.popup-wrap:before {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  content: "";
+}
+
+.popup-wrap {
+  display: none;
+}
+
+.popup-wrap.open,
+.popup-wrap.open:before {
+  display: block;
+}
+
+.popup-wrap>[class^="popup"] {
+  vertical-align: middle;
+  background: #fff;
+  border-radius: 0.75rem;
+  z-index: 1000;
+}
+
+.popup-body {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 2.25rem 1.5rem;
+  height: 100%;
+  text-align: center;
+}
+
+/* 팝업 닫기 버튼 */
+header>.btn-popup-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  text-indent: -99999em;
+  background-color: transparent;
+  border: none;
+}
+
+header>.btn-popup-close:focus {
+  outline: none;
+}
+
+header>.btn-popup-close:before,
+header>.btn-popup-close:after {
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  content: "";
+}
+
+header>.btn-popup-close:before {
+  transform: rotate(45deg);
+}
+
+header>.btn-popup-close:after {
+  transform: rotate(-45deg);
+}
+
+/* 팝업 닫기 일반 버튼 디자인 */
+header>.btn-popup-close {
+  right: 0;
+  top: 0;
+}
+
+header>.btn-popup-close:before,
+header>.btn-popup-close:after {
+  top: 16px;
+  right: 18px;
+  background-color: #000;
+}
+
+/* 팝업 닫기 버튼  alrert*/
+.popup-alert header>.btn-popup-close {
+  right: -0.25rem;
+  top: -2.5rem;
+}
+
+.popup-alert header>.btn-popup-close:before,
+.popup-alert header>.btn-popup-close:after {
+  top: 0;
+  height: 28px;
+  background-color: #fff;
+}
+
+.popup-alert {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  max-width: 20rem;
+  min-width: 16rem;
+  min-height: 8rem;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.popup-alert .popup-body {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+/* popup confirm*/
+.popup-confirm {
+  position: fixed !important;
+  top: 50%;
+  left: 30px;
+  width: calc(100% - 60px);
+  min-height: 28rem;
+  margin-top: -14rem;
+}
+
+/* 바디에 스크롤 막는 방법 */
+.not-scroll {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%
+}
+
+.popup-layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed !important;
+  top: 0;
+  width: calc(100% - 60px);
+  height: 100%;
+  margin: 0 30px;
+  background: transparent !important;
+}
+
+.popup-layer .popup-scroll,
+.popup-layer>section {
+  position: relative;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 2.25rem 0 2rem;
+  margin: auto;
+}
+
+.popup-layer>section {
+  overflow: hidden;
+}
+
+.popup-layer .popup-scroll>section {
+  height: 520px;
+  overflow: auto;
+}
+
+@media (max-height:570px) {
+  .popup-layer .popup-scroll>section {
+    height: 450px;
+  }
+}
+
+.popup-layer .popup-scroll>section .popup-body {
+  padding-top: 0;
+}
+
+
+/* 팝업 컨텐츠 */
+
+.popup-body>h4 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.popup-body>h4 em {
+  font-weight: 700;
+}
+
+.popup-body .btn-group {
+  margin-top: 16px;
+}
+
+.popup-body .divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 16px 0;
+  background: #e5e5e5;
+}
+
+.popup-body p {
+  font-size: 0.875rem;
+}
+
+.popup-body p small {
+  font-size: 0.75rem;
+}
+
+/* popup footer */
+.popup-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.popup-footer .grid-flex [class^="btn"] {
+  display: flex;
+  flex: 1;
+  min-height: 56px;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-footer .grid-flex [class^="btn"]:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.popup-footer .grid-flex [class^="btn"]:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+
+/* 팝업 배너 */
+
+.popup-wrap>.popup-banner {
+  position: fixed !important;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+
+.popup-wrap>.popup-banner>article {
+  position: relative;
+}
+
+.popup-wrap>.popup-banner .popup-body {
+  padding: 3rem 1.5rem;
+}
+
+.popup-wrap>.popup-banner .popup-body>article {
+  position: relative;
+}
+
+.popup-banner .popup-body button,
+.popup-banner .popup-body a {
+  position: absolute;
+  width: 100%;
+  height: 56px;
+  left: 0;
+  bottom: 25px;
+
+}
+
+.popup-banner img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.popup-banner .btn-banner-close {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  width: 9vw;
+  height: 9vw;
+  max-width: 36px;
+  max-height: 36px
+}
+
+/* 쿠키추가 */
+.popup-banner .close-cookie {
+  outline: none;
+  margin: 16px 12px 0;
+  color: #fff;
+  text-align: left;
+  background: none;
+  border: none;
+  float: left;
+  overflow: visible;
+}
+
+.popup-banner .close-cookie i {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  padding: 0;
+  width: 1px;
+  height: 12px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.popup-banner .close-cookie i:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: -6px;
+  width: 12px;
+  height: 1px;
+  background: #fff;
+}
