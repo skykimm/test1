@@ -70,8 +70,7 @@ img{
   main
  ---------------------------------------------------------- */
 
-
- .main .sticky{
+.main .sticky{
   position: sticky;
   top:0;
   width: 100%;
