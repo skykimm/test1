@@ -1,0 +1,698 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+/* font-family: 'Spoqa Han Sans', 'Sans-serif'; */
+
+button {
+  outline: none;
+}
+.point-color-red{
+  color: #cf152d;
+}
+/* ----------------------------------------------------------
+  공통 list
+---------------------------------------------------------- */
+.agree-container .circle {
+  display:block;
+  overflow: hidden;
+  padding: 8px 20px;
+  width: calc(100% - 40px) ;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.agree-container .circle dt,
+.agree-container .circle dd,
+.agree-container .circle p,
+.agree-container .circle li {
+  position: relative;
+  padding: 0 0 0 15px;
+}
+
+.agree-container .circle dt span,
+.agree-container .circle dd span,
+.agree-container .circle li span,
+.agree-container .circle p span {
+  position: absolute;
+  left: 0;
+}
+
+/* ----------------------------------------------------------
+ 동의 팝업 메인 close 버튼
+---------------------------------------------------------- */
+.agree-container .agree-pop-close {
+  display: block;
+  width: 17.58px;
+  height: 17.58px;
+  position: absolute;
+  top: 26px;
+  right: 14px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.agree-container .agree-pop-close:before,
+.agree-container .agree-pop-close:after{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #000;
+  border-radius: 0.125rem;
+  width: 1px;
+  height: 1.25rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  content:'';
+}
+.agree-container .agree-pop-close:after{
+  transform: translate(-50%, -50%)  rotate(135deg);
+}
+
+/* ----------------------------------------------------------
+ agree-popup 메인 팝업
+---------------------------------------------------------- */
+
+.agree-popup{
+  display: none;
+  word-break: keep-all;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+/* dim */
+.agree-popup::before{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  content:"";
+}
+.agree-popup.open{
+  display: block;
+}
+.agree-popup .agree-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  text-align: left;
+  box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, .1);
+  overflow: hidden;
+}
+
+.agree-popup .agree-wrap > div {
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+
+.agree-popup .agree-wrap .agree-container {
+  position: relative;
+  padding: 0 0 20px;
+}
+
+/* ----------------------------------------------------------
+  agree-popup 메인 팝업 content
+---------------------------------------------------------- */
+.agree-popup .pop1,
+.agree-popup .pop2 {
+  width:100%;
+  text-align: left;
+}
+.agree-popup .pop1 img {
+  width: 100%;
+}
+
+.agree-popup .pop1 .agree-container>img {
+  margin-top: 1px;
+}
+
+.agree-popup .pop2 .agree-pop-close {
+  top: 26px;
+}
+
+.agree-popup .agree-box-1 {
+  width: 100%;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agree-popup .agree-box-1 .main-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  
+}
+
+.agree-popup .agree-box-2 {
+  width: calc (100% - 32px);
+  padding: 16px;
+  text-align: center;
+  background-color: #efefef;
+}
+
+.agree-popup .agree-box-2 .sub-title {
+  font-size: 14px;
+}
+
+.agree-popup .agree-box-3 {
+  padding: 35px 16px 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.agree-popup .agree-box-3 .sub-title2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.agree-popup .agree-box-3 .sub-title2-list {
+  margin-left: 12px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------------
+  동의 체크박스
+---------------------------------------------------------- */
+
+.agree-container .check-box-1 {
+  position: relative;
+}
+
+.agree-container .check-box-1 input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0
+}
+
+.agree-container .check-box-1 input[type="checkbox"]+label {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.agree-container .check-box-1 input[type="checkbox"]+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 21px;
+  height: 21px;
+  line-height: 21px;
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #cacece;
+}
+
+.agree-container .check-box-1 input[type="checkbox"]:checked+label:before {
+  content: '\2714';
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+}
+
+.agree-container .check-wrap {
+  overflow: hidden;
+  border: 2px solid #d7d7d7;
+  margin: 0 20px;
+}
+
+.agree-container .check-wrap li {
+  position: relative;
+  overflow: hidden;
+  height: 45px;
+}
+
+.agree-container .check-wrap li+li {
+  border-top: 2px solid #d7d7d7;
+}
+
+.agree-container .check-wrap li .check-box-1 label {
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  color: #111;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 44px;
+}
+
+.agree-container .check-wrap li .check-box-1 label span.cr1 {
+  color: #ee7623;
+}
+
+.agree-container .check-wrap li .check-box-1.allChk label {
+  font-weight: 700;
+  font-size:14px;
+  background: #fff;
+}
+
+.agree-container .check-wrap li .check-box-1 input[type="checkbox"]+label:before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  background: url('../img/agree/chk_off.png') no-repeat center;
+  border: 0;
+  background-size: 100% auto;
+}
+
+.agree-container .check-wrap li .check-box-1 input[type="checkbox"]:checked+label:before {
+  content: '';
+  color: #99a1a7;
+  text-shadow: none;
+  background: url('../img/agree/chk_on.png') no-repeat center;
+  border-color: #adb8c0;
+  background-size: 100% auto;
+}
+
+.agree-container .check-wrap li .arrow-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  margin: auto 0;
+  right: 0;
+  background: url('../img/agree/arrow1.png') no-repeat center;
+  background-size: 10px 15px;
+  width: 40px;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------
+  모바일 체크박스
+---------------------------------------------------------- */
+
+.agree-container .mobile-check {
+  overflow: hidden;
+  border-left: 0;
+  margin: 0 21px;
+}
+
+.agree-container .mobile-check li {
+  float: left;
+  width: 24.9%;
+}
+
+/* ----------------------------------------------------------
+  라디오 박스
+---------------------------------------------------------- */
+
+.agree-container .rdo-box {
+  position: relative;
+}
+
+.agree-container .rdo-box input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0
+}
+
+.agree-container .rdo-box input[type="radio"]+label {
+  position: relative;
+  display: block;
+  padding-left: 0;
+  line-height: 47px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.agree-container .rdo-box input[type="radio"]+label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -2px;
+  border: 2px solid #d7d7d7;
+}
+
+
+.agree-container .rdo-box input[type="radio"]:checked+label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -2px;
+  border: 2px solid #cf152d;
+  z-index: 50;
+}
+
+.agree-container .rdo-box input[type="radio"]:checked+label {
+  color: #cf152d;
+}
+
+/* ----------------------------------------------------------
+  응모 정보 입력 폼 
+---------------------------------------------------------- */
+
+.agree-popup .inp-btn {
+  overflow: hidden;
+  margin-top: 5px;
+  padding: 0 20px;
+}
+
+.agree-popup .inp-btn input {
+  float: left;
+  width: 60%;
+  height: 45px;
+  border: 2px solid #d7d7d7;
+  border-right: transparent;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.agree-popup .inp-btn button {
+  float: left;
+  width: 39.9%;
+  height: 45px;
+  background-color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.agree-popup .inp-btn button:disabled {
+  background-color: #bfbfbf;
+}
+
+.agree-popup .inp-time {
+  position: relative;
+  margin-top: 5px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.agree-popup .inp-time input {
+  width: 100%;
+  border: 2px solid #d7d7d7;
+  height: 45px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.agree-popup .inp-time .time {
+  position: absolute;
+  right: 34px;
+  top: 0;
+  height: 45px;
+  font-size: 100%;
+  color: #00aeef;
+  line-height: 45px;
+}
+
+.agree-popup .inp-time .time img {
+  display: inline-block;
+  margin-right: 3px;
+  width: 11px;
+  vertical-align: middle;
+}
+
+.agree-popup .inp-name {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.agree-popup .inp-name input {
+  width: 100%;
+  border: 2px solid #d7d7d7;
+  height: 45px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.agree-popup .inp-name p{
+  position: relative;
+  padding: 8px 0 8px 14px;
+  font-size: 13px;
+  color: #ee7623;
+}
+.agree-popup .inp-name p span{
+  position: absolute;
+  left: 0;
+}
+.agree-popup .btn-wrap {
+  text-align: center;
+  margin: 28px 0 16px;
+}
+
+.agree-popup .btn-wrap button {
+  width: 55%;
+  height: 44px;
+  border-radius: 50px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rdoBox {
+  position: relative;
+}
+
+.rdoBox input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0
+}
+
+.rdoBox input[type="radio"]+label {
+  display: inline-block;
+  font-family: 'Noto Sans KR', sans-serif;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size: 23px;
+  color: #d7d7d7;
+}
+
+.rdoBox input[type="radio"]+label {
+  position: relative;
+  display: block;
+  padding-left: 0;
+  line-height: 80px;
+  text-align: center;
+}
+
+.rdoBox input[type="radio"]+label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -2px;
+  border: 2px solid #d7d7d7;
+}
+
+.rdoBox input[type="radio"]:checked+label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -2px;
+  border: 2px solid #cf152d;
+  z-index: 50;
+}
+
+.rdoBox input[type="radio"]:checked+label {
+  color: #cf152d;
+}
+
+
+/* ----------------------------------------------------------
+  전체동의 -> 전문보기 팝업2
+---------------------------------------------------------- */
+.agree-popup .pop2 .agree-box-1{
+  background-color: #efefef;
+}
+.agree-popup .pop2 .agree-box-1 .main-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+.agree-popup .pop2 .agree-box-3 {
+  margin: 0 auto;
+  padding: 18px 0;
+  width: 100%;
+}
+
+.agree-popup .agree-box-3.pb10 {
+  padding-bottom: 10px !important;
+}
+
+.agree-popup .pop2 .agree-box-3 .sub-title2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.agree-popup .pop2 .agree-box-3 .sub-title2-list {
+  margin: 16px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+/* ----------------------------------------------------------
+  팝업 테이블
+---------------------------------------------------------- */
+.agree-container table {
+  position: relative;
+  margin: 0 20px 10px;
+  width: calc(100% - 40px) ;
+  text-align: center;
+  font-size: 13px;
+  font-weight: normal;
+  border-collapse: collapse;
+}
+
+.agree-container table thead tr th {
+  padding: 10px 4px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  
+  vertical-align: middle;
+}
+
+.agree-container table tbody tr td {
+  padding: 10px 4px;
+  vertical-align: middle;
+  border: 1px solid #efefef;
+  vertical-align: middle;
+}
+
+
+
+/* ----------------------------------------------------------
+ agree-popup i phone se 조정
+---------------------------------------------------------- */
+@media (min-width: 320px) and (max-width: 340px) {
+  .agree-container .agree-pop-close {
+    right: 3px;
+  }
+
+  .agree-popup .inp-btn input {
+    width: 55%;
+  }
+
+  .agree-popup .inp-btn button {
+    width: 45%;
+  }
+}
+/* ----------------------------------------------------------
+z-inde
+---------------------------------------------------------- */
+
+.agree-pop-close:before,
+.agree-pop-close:after{
+  z-index: 1002;
+}
+.agree-wrap > div{
+  z-index: 1000;
+  background-color: #fff;
+}
+.agree-wrap.pop2 > div{
+  position: relative;
+  z-index: 1001;
+}
+/* ----------------------------------------------------------
+팝업 inner 팝업
+---------------------------------------------------------- */
+.agree-wrap.pop2{
+  width:90%;
+  max-width: 400px;
+  max-height: 550px;
+  margin:0 auto;
+  border-radius: 10px;
+}
+/* ----------------------------------------------------------
+mobile
+---------------------------------------------------------- */
+@media (max-width:414px) {
+  .agree-popup .agree-wrap > div::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* ----------------------------------------------------------
+pc
+---------------------------------------------------------- */
+@media (min-width:415px) {
+  .agree-wrap{
+    width: 90%;
+    max-width: 600px;
+    max-height: 600px;
+    margin:0 auto;
+    border-radius: 20px;
+  }
+
+  /* width */
+  .agree-popup .agree-wrap > div::-webkit-scrollbar {
+    width: 8px;
+  }
+  /* Track */
+  .agree-popup .agree-wrap > div::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  /* Handle */
+  .agree-popup .agree-wrap > div::-webkit-scrollbar-thumb {
+    background: #aaa; 
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+  .agree-popup .agree-wrap > div::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+  }
+
+
+}

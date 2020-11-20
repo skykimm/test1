@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@import url("../../step0/css/reset.css");
+@import url("agreement.css");
+@import url("popup.css");
+
+/* ----------------------------------------------------------
+	common
+---------------------------------------------------------- */
+
+body,a,button,input,select{
+  font-family: 'NanumSquareRound';
+  word-break: keep-all;
+}
+body{
+  background-color: #030D10;
+  overflow-x: hidden;
+}
+.container{letter-spacing: -0.0187rem;}
+.hidden{display: none;}
+em{font-weight: 700; font-style: normal; color: #000;}
+.normal{font-weight:300;}
+
+/* font-size */
+h2{font-size:37.5px; font-weight: 700; line-height: 130%;}/*37.5px*/
+h3{font-size:27.083px; font-weight: 500; line-height: 140%; letter-spacing:-0.938px;}/*27.083px*/
+h3.big{font-size:28.125px;}
+h3.small{font-size:18.75px;}
+h4{font-size:17.708px; font-weight: 500; line-height: 140%;}
+h5{font-size:16.665px; font-weight: 400; line-height: 140%;}/*16.665px*/
+p{font-size:14.584px; font-weight: 200; line-height: 140%;}/*14.584px*/
+p.small{font-size:12.499px;}
+
+/* image */
+.img-responsive{
+  display: block;
+  width:100%;
+  margin:0 auto;
+}
+.img-wrap img {
+  display: block;
+  width: 100%;
+}
+/* ----------------------------------------------------------
+	component # button
+---------------------------------------------------------- */
+/* 공통 버튼 디자인 */
+.btn-wrap [class^="btn"]{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height:16vw;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* 버튼 컬러 */
+.btn-base{
+  color: #fff;
+  border: 1.043px solid rgba(255,255,255,.8);
+}
+.btn-point{
+  color: #fff;
+  background:#40A7C9;
+}
+img{
+  display: block;
+  width:100%;
+}
+/* ---------------------------------------------------------- 
+  main
+ ---------------------------------------------------------- */
+
+
+ .main .sticky{
+  position: sticky;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  background-color: #030D10;
+}
+.main .visual{
+  position: absolute;
+  bottom:0;
+  opacity: 0;
+  transform: translateY(20%);
+  transition: 1s;
+}
+.main .visual.on{
+  opacity: 1;
+  transform: translateY(0);
+}
+.main .btn-wrap{  
+  position: fixed;
+  bottom:0;
+  width:100%;
+  box-sizing: border-box;
+  transition: .5s;
+}
+.main .btn-wrap{
+  padding: 5.334vw;
+}
+.main .btn-wrap .btn{
+  border-radius: 1.6vw;
+  font-size: 4.533vw;
+  font-weight: 800;
+}
+.main .btn-wrap.is-scroll{
+  padding: 0;
+}
+.main .btn-wrap.is-scroll .btn{
+  border-radius: 0;
+}
+
+/* ---------------------------------------------------------- 
+  notice-wrap
+ ---------------------------------------------------------- */
+.notice-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin-top:-21.333vw; 
+  color: #888888;
+  background-color: #030D10;
+  word-break: keep-all;
+  padding-bottom:16vw;
+
+}
+
+.notice-wrap .notice-content {
+  padding: 5.334vw 5.334vw 8vw;
+}
+.notice-content + .notice-content{
+  margin-top:-8vw;
+}
+.notice-wrap dt {
+  display: flex;
+  align-items: center;
+  font-size: 4vw;
+  line-height: 5.867vw;
+  font-weight: 700;
+  padding-bottom: 4vw;
+  margin-top:2.133vw;
+  font-family: "NanumSquareRound", sans-serif;
+}
+
+.notice-wrap dt span{
+  display: inline-block;
+  width: 3.733vw;
+  height: 3.733vw;
+  margin-right: 1.333vw;
+  background: url(../img/ic_notice.svg) no-repeat 0 0 / cover;
+  text-indent: -9999rem;
+}
+
+.notice-wrap dd {
+  padding-left: 2.667vw;
+  margin-bottom: 2.667vw;
+  position: relative;
+  font-size: 3.467vw;
+  line-height: 5.334vw;
+  font-family: "NanumSquareRound", sans-serif;
+}
+
+.notice-wrap dd::before {
+  content: "";
+  display: inline-block;
+  width: 1.067vw;
+  height: 1.067vw;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #8C8C90;
+  position: absolute;
+  top: 1.866vw;
+  left: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.notice-wrap dd.point-color,
+.notice-wrap dd .point-color {
+  color: rgba(211, 38, 84, 0.8);
+}
+.notice-wrap dd.point-color::before {
+  background: rgba(211, 38, 84, 0.8);
+}
+
+
+/* ---------------------------------------------------------- 
+  복사하기 
+---------------------------------------------------------- */
+
+
+.tag-copy button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+}
+
+.tag-copy-block {
+  background-color: #40A7C9;
+  padding: 16px 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 500;
+  display: none;
+}
