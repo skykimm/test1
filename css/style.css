@@ -6,7 +6,6 @@
 /* ----------------------------------------------------------
 	common
 ---------------------------------------------------------- */
-
 body,a,button,input,select{
   font-family: 'NanumSquareRound';
   word-break: keep-all;
@@ -40,6 +39,7 @@ p.small{font-size:12.499px;}
   display: block;
   width: 100%;
 }
+
 /* ----------------------------------------------------------
 	component # button
 ---------------------------------------------------------- */
@@ -66,10 +66,10 @@ img{
   display: block;
   width:100%;
 }
+
 /* ---------------------------------------------------------- 
   main
  ---------------------------------------------------------- */
-
 .main .sticky{
   position: sticky;
   top:0;
@@ -121,9 +121,7 @@ img{
   background-color: #030D10;
   word-break: keep-all;
   padding-bottom:16vw;
-
 }
-
 .notice-wrap .notice-content {
   padding: 5.334vw 5.334vw 8vw;
 }
@@ -140,7 +138,6 @@ img{
   margin-top:2.133vw;
   font-family: "NanumSquareRound", sans-serif;
 }
-
 .notice-wrap dt span{
   display: inline-block;
   width: 3.733vw;
@@ -149,7 +146,6 @@ img{
   background: url(../img/ic_notice.svg) no-repeat 0 0 / cover;
   text-indent: -9999rem;
 }
-
 .notice-wrap dd {
   padding-left: 2.667vw;
   margin-bottom: 2.667vw;
@@ -158,7 +154,6 @@ img{
   line-height: 5.334vw;
   font-family: "NanumSquareRound", sans-serif;
 }
-
 .notice-wrap dd::before {
   content: "";
   display: inline-block;
@@ -175,7 +170,6 @@ img{
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-
 .notice-wrap dd.point-color,
 .notice-wrap dd .point-color {
   color: rgba(211, 38, 84, 0.8);
@@ -184,18 +178,14 @@ img{
   background: rgba(211, 38, 84, 0.8);
 }
 
-
 /* ---------------------------------------------------------- 
   복사하기 
 ---------------------------------------------------------- */
-
-
 .tag-copy button {
   padding: 10px 20px;
   background: #333;
   color: #fff;
 }
-
 .tag-copy-block {
   background-color: #40A7C9;
   padding: 16px 0;
