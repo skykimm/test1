@@ -356,7 +356,7 @@ strong,.strong {
   overflow: hidden;
   width: 100%;
   margin-top: 12vw;
-  padding-bottom: 58.335px;
+  /* padding-bottom: 58.335px; */
   margin-bottom: -58.335px;
   color: #A6A5A1;
   background: #272727;
