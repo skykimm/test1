@@ -540,8 +540,8 @@ table + .list-label{
   line-height: 50px;
   text-align: center;
   border-radius: 50%;
-  background-color: #c73e1d;
-  background-image: linear-gradient(315deg, #c73e1d 0%, #a23b72 37%, #2e86ab 100%);
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
   color: #fff;
   font-size: 13px;
   font-weight: 800;
@@ -556,6 +556,6 @@ table + .list-label{
 }
 
 .fix-btn.open-btn a{
-  background-color: #7fd82b;
-  background-image: linear-gradient(319deg, #7fd82b 0%, #ef4063 37%, #e557c6 100%); 
+  background-color: #5d4257;
+  background-image: linear-gradient(315deg, #5d4257 0%, #a5c7b7 74%);
 }
