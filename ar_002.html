@@ -194,6 +194,12 @@
   </main>
 
 
+  <!-- top 버튼 -->
+  <div class="fix-btn">
+    <a href="#none" style="cursor: pointer;" onclick="window.scrollTo(0,0);">TOP</a>
+  </div>
+
+
   <!-- 종료 알림 팝업 -->
   <div class="popup-wrap" id="popupEnd">
     <article class="popup-alert">
@@ -226,7 +232,7 @@
     </article>
   </div>
 
-  <script src="js/lib/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/gnb.js"></script>
   <script src="js/common.js"></script>
 
@@ -239,6 +245,22 @@
       $('#popupIphone').addClass('open');
     } 
   </script> -->
+
+
+  <!-- 스크롤 내릴 시 top 버튼 생성 -->
+  <script>
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var btns = $('.fix-btn');
+
+      if (scroll > 0) {
+        btns.addClass('open-btn');
+      }
+      else {
+        btns.removeClass('open-btn');
+      }
+    });
+  </script>
 </body>
 
 </html>
