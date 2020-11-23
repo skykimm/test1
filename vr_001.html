@@ -45,7 +45,7 @@
   <style>
     .wrap::after {
       height: 100%;
-      background: #d9f6d6 url('../skt_test/img/vr_01/visual_bg.png') repeat 0 15vw /100%;
+      background: #d9f6d6 url('img/vr_01/visual_bg.png') repeat 0 15vw /100%;
     }
 
     .btn-point {
@@ -95,7 +95,7 @@
 
       <!-- visual-wrap -->
       <div class="visual-wrap">
-        <img class="img-responsive" src="../skt_test/img/vr_01/visual_title.png" alt="슬기로운 짬푸생활 ep1. 짬푸는 못말려">
+        <img class="img-responsive" src="img/vr_01/visual_title.png" alt="슬기로운 짬푸생활 ep1. 짬푸는 못말려">
       </div>
 
       <div class="contents-wrap">
@@ -103,7 +103,7 @@
         <section class="card-wrap event-wrap">
           <header class="event-header">
             <h2>
-              <img class="img-responsive" src="../skt_test/img/vr_01/txt_title.png" alt="내 짬푸 아바타 코스튬 뽐내자">
+              <img class="img-responsive" src="img/vr_01/txt_title.png" alt="내 짬푸 아바타 코스튬 뽐내자">
             </h2>
             <p>
               다양한 코스튬으로 개성 넘치는 Jump 아바타 착장샷을 캡쳐한 후
@@ -142,11 +142,11 @@
         </section>
 
         <div class="card-wrap img-wrap">
-          <img class="img-responsive" src="../skt_test/img/vr_01/img_event_01.png" alt="">
+          <img class="img-responsive" src="img/vr_01/img_event_01.png" alt="">
         </div>
 
         <div class="card-wrap img-wrap">
-          <img class="img-responsive" src="../skt_test/img/vr_01/img_event_02.png" alt="">
+          <img class="img-responsive" src="img/vr_01/img_event_02.png" alt="">
         </div>
 
         <!-- btn-wrap -->
@@ -176,8 +176,10 @@
 
   </main>
 
-
-  <!-- 팝업 -->
+  <!-- top 버튼 -->
+  <div class="fix-btn">
+    <a href="#none" style="cursor: pointer;" onclick="window.scrollTo(0,0);">TOP</a>
+  </div>
 
   <!-- 종료 알림 팝업 -->
   <div class="popup-wrap" id="popupEnd">
@@ -211,9 +213,9 @@
     </article>
   </div>
 
-  <script src="../skt_test/js/lib/jquery-3.4.1.min.js"></script>
-  <script src="../skt_test/js/gnb.js"></script>
-  <script src="../skt_test/js/common.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/gnb.js"></script>
+  <script src="js/common.js"></script>
 
   <!-- 
   <script>
@@ -224,6 +226,21 @@
       $('#popupIphone').addClass('open');
     } 
   </script> -->
+
+  <!-- 스크롤 내릴 시 top 버튼 생성 -->
+  <script>
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var btns = $('.fix-btn');
+
+      if (scroll > 0) {
+        btns.addClass('open-btn');
+      }
+      else {
+        btns.removeClass('open-btn');
+      }
+    });
+  </script>
 </body>
 
 </html>
