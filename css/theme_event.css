@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("../../step0/css/reset.css");
+@import url("../css/reset.css");
 @import url("../css/gnb.css");
 @import url("../css/popup.css");
 @import url("../css/swiper.min.css");
@@ -519,3 +519,43 @@ table + .list-label{
   }
 
 } */
+
+/* ---------------------------------------------------------- 
+  TOP btn
+---------------------------------------------------------- */
+.fix-btn{
+  /* display: none; */
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  transition: 0.5s;
+}
+.fix-btn a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #c73e1d;
+  background-image: linear-gradient(315deg, #c73e1d 0%, #a23b72 37%, #2e86ab 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.open-btn{
+  /* display: block; */
+  width: 60px;
+  height: 60px;
+  right: 4%;
+  bottom: 4%;
+}
+
+.fix-btn.open-btn a{
+  background-color: #7fd82b;
+  background-image: linear-gradient(319deg, #7fd82b 0%, #ef4063 37%, #e557c6 100%); 
+}
