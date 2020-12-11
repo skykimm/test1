@@ -1,0 +1,477 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url("agreement.css");
+@import url("popup.css");
+
+
+/* ----------------------------------------------------------
+	common
+---------------------------------------------------------- */
+/* body,a,button,input,select {
+  font-family: 'NanumSquareRound';
+  word-break: keep-all;
+} */
+
+.container-wrap {
+  background: #FFF493;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+em {font-weight: 600;font-style: normal;}
+.normal {font-weight: 300;}
+
+/* font-size */
+h2 {font-size: 8vw; font-weight: 600; line-height: 130%;}
+h3 {font-size: 1.25rem; font-weight: 500; line-height: 140%; letter-spacing: -0.9px;}/*20px*/
+h3.big {font-size: 1.4375rem; font-weight: 600;}/*23px*/
+h3.small {font-size: 1.125rem;}/*18px*/
+h4 {font-size: 1.0625rem; font-weight: 500;  line-height: 140%;}/*17px*/
+h5 {font-size: 0.9375rem; font-weight: 400;  line-height: 140%;}/*15px*/
+p {font-size: 0.875rem; font-weight: 200;  line-height: 140%;}/*14px*/
+p.small {font-size: 0.75rem;}/*12px*/
+
+.jumpar_event img {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------- 
+    font-common
+ ---------------------------------------------------------- */
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.jumpar_event h2 {
+  font-family: 'yg-jalnan';
+}
+
+/* ----------------------------------------------------------
+	component # button
+---------------------------------------------------------- */
+/* 공통 버튼 디자인 */
+.content-wrap .btn-group {
+  margin: 0 auto 15px;
+}
+.content-wrap .btn-group>[class^="btn"] {
+  padding: 5px;
+  font-weight: 400;
+  text-align: center;
+  min-height: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.content-wrap .btn-group>.btn-full {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+
+.content-wrap .btn-full+.btn-full {
+  margin-top: 0.75rem;
+}
+
+.btn-round {
+  color: #fff;
+  border-radius: 1.5rem;
+}
+
+/* 버튼 컬럼 */
+/* 자동 정렬 */
+.grid-flex .btn-full {
+  flex: 1;
+}
+
+.grid-flex .btn-full+.btn-full {
+  margin-left: 0.5rem;
+  margin-top: 0;
+}
+
+/* 버튼 컬러 */
+.btn-base {
+  background-color: #0F96D1;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* 공통 라벨 */
+.label-wrap{
+  display: inline-block;
+  min-width: 100px;
+  height: 24px;
+  line-height: 20px;
+  padding: 4px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #038AC5;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------- 
+    key-visual
+ ---------------------------------------------------------- */
+.key-visual {
+  position: relative;
+  padding: 35px 0 10px;
+  background: url('../img/summer/jumpar_bg.png') no-repeat top center;
+  background-size: 100%;
+  color: #038AC5;
+  text-align: center;
+  height: 110vw;
+}
+
+.key-visual .logo-wrap {
+  width: 160px;
+  margin: 0 auto;
+}
+
+.key-visual .img-wrap {
+  margin-top: 50px;
+}
+
+.key-visual .text-wrap h5 {
+  margin: 12px 0 0;
+  color: #4B4B4B;
+}
+
+.key-visual .text-wrap h2 {
+  font-size: 23px;
+  margin-bottom: 2px;
+}
+.key-visual .text-wrap h2 .text-point{
+  font-size: 30px;
+  position: relative;
+}
+.key-visual .text-wrap .text-point::after{
+  background: url(../img/point_star.png);
+  background-size: 100%;
+  content: "";
+  display: inline-block;
+  clear: both;
+  position: absolute;
+  top: -18px;
+  left: 32px;
+  width: 20px;
+  height: 20px;
+}
+/* ---------------------------------------------------------- 
+    content-wrap
+ ---------------------------------------------------------- */
+.content-wrap{
+  text-align: center;
+  position: relative;
+  padding: 0 20px 0;
+  margin-top: -30px;
+}
+.content-wrap header {
+  color: #4B4B4B;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.content-wrap header h1{
+  font-weight: 600;
+}
+.content-wrap header .small{
+  font-size: 13px;
+  font-weight: normal;
+}
+/* 라벨 */
+.content-wrap > .label-wrap{
+  margin-bottom: 20px;
+}
+
+/* 버튼 */
+.check-wrap + .btn-point{
+  width: 100%;
+  height: 50px;
+  background: #FFBB2F;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.check-wrap +.btn-point .btn-full{
+  padding: 5px 0;
+  line-height: 40px; 
+  font-size: 18px;
+  font-weight: 500;
+}
+/* ---------------------------------------------------------- 
+  체크영역 
+ ---------------------------------------------------------- */
+.check-wrap{
+  margin-bottom: 20px;
+  position: relative;
+}
+.check-wrap ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+.rdo-box input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip:rect(0,0,0,0); 
+  border: 0 ;
+  } 
+.rdo-box input[type="radio"] + label { 
+  display: block;
+  position: relative;
+  padding-left:0;
+  cursor: pointer;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    font-size:23px;
+  text-align:center;
+  overflow: hidden;
+  border-radius: 10px;
+  }
+.genderList > li{
+  padding: 0 5px;
+  position: relative;
+  width: calc(33% - 10px);
+}
+.genderList li::after{
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 60px;
+  background:url(../img/auiz-check.png)no-repeat bottom right / 100%;
+  width: 20px;
+  height: 20px;
+  z-index: 60;
+}
+.rdo-box input[type="radio"] + label img{
+  width: 100%;
+  display: block;
+}
+.rdo-box input[type="radio"] + label:before,
+.rdo-box input[type="radio"] + label:after{
+  content:'';
+  position:absolute;
+  z-index:2;
+}
+.rdo-box input[type="radio"] + label:after{
+  bottom: -35px;
+  right: -15px;
+  width: 50px;
+  height: 85px;
+  background: #BABABA;
+  transform: rotate(45deg);
+}
+.rdo-box input[type="radio"] + label:before {
+  top:0;
+  bottom:0;
+  left:0; 
+  right:0;
+  border-radius: 10px;
+  border: 3px solid #BABABA;
+
+}
+.rdo-box input[type="radio"]:checked + label:before {
+  border: 3px solid #0F96D1;
+}
+.rdo-box input[type="radio"]:checked + label:after {
+  background: #0F96D1;
+}
+
+.rdo-box input[type="radio"]:checked + label {
+  color:#0F96D1;
+}
+.rdo-box + .rdo-text{
+  font-size: 12px;
+  margin: 4px 0 15px;
+}
+
+/* ---------------------------------------------------------- 
+  응모방법 
+ ---------------------------------------------------------- */
+.white-wrap{
+  background-color: #fff;
+  margin: 6px -20px 0;
+  padding: 0 20px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.white-wrap::before{
+  content: "";
+  display: block;
+  width: 150%;
+  height: 70px;
+  background: url(../img/selcet_footer.png) no-repeat 0 0 / cover;
+  position: absolute;
+  top: -10px;
+  left: -50px;
+  z-index: 0;
+}
+
+.list-wrap{
+  margin: 20px 0 30px;
+  position: relative;
+}
+
+.list-wrap .list li{
+  text-align: left;
+  font-size: 15px;
+  position: relative;
+  padding: 0 0 0 20px;
+  margin: 0 10px 6px 0; 
+}
+.list-wrap .list li .list-num{
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  background: #4B4B4B;
+  color: #fff;
+  border-radius: 50%;
+  display: block;
+}
+.list-wrap > .label-wrap{
+  margin-bottom: 20px;
+}
+
+
+/* ---------------------------------------------------------- 
+  이벤트 경품 
+ ---------------------------------------------------------- */
+.event-wrap{
+  margin:40px 0 20px;
+  position: relative;
+}
+.event-wrap::after{
+  content: "";
+  display: inline-block;
+  clear: both;
+  background: url(../img/listimg.png) no-repeat top right / 100%;
+  position: absolute;
+  top: -126px;
+  right: -8px;
+  width: 85px;
+  height: 150px;
+}
+.event-wrap > .label-wrap{
+  margin-bottom: 20px;
+}
+.event-wrap .event{
+  display: flex;
+}
+.event-wrap .event li{
+  margin-top: 15px;
+  font-weight: 500;
+}
+.event-wrap .event li .img-wrap{
+  min-height: 100px; 
+  padding: 0 5px;
+}
+.event-wrap .event li .event-text{
+  font-size: 11px;
+}
+
+/* ---------------------------------------------------------- 
+    notice-wrap
+ ---------------------------------------------------------- */
+.notice-wrap {
+  width: 100%;
+  color: #A0A0A0;
+  background: #F0F0F0;
+  position: relative;
+}
+.notice-wrap::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  background: url(../img/foot-bg.png) no-repeat 0 0 / cover;
+  position: absolute;
+  top: -15px;
+}
+.notice-wrap .notice-content {
+  padding: 24px 20px 30px;
+}
+
+.notice-wrap dt {
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.notice-wrap dt span {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  padding: 1px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #8C8C90;
+}
+
+.notice-wrap dd {
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.notice-wrap dd::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #A0A0A0;
+  position: absolute;
+  top: 7px;
+  left: 15px;
+}
+
+.notice-wrap dd p {
+  font-size: 13px;
+  line-height: 160%;
+  margin-left: 25px;
+}
+
+@media(max-width:320px){
+  .key-visual {
+    padding:29px 0 8px;
+  }
+  .key-visual .text-wrap h2 {
+    font-size: 18px;
+  }
+  .key-visual .text-wrap h2 .text-point {
+    font-size: 28px;
+  }
+  .key-visual .text-wrap .text-point::after {
+    left: 24px;
+  }
+}
